@@ -50,7 +50,7 @@ One of the core features of this chatbot is its lightweight memory system which 
 
 -  The last 5 messages of a conversation are used for context.
 -  After each AI response, a summary is generated using the chatbot itself.
--  This summary is stored in the Conversation model.
+-  This summary is stored in the Conversation model using those last 5 messages.
 -  The summary acts as long-term memory for future interactions.
 
 This allows the system to maintain contextual awareness without storing full conversation history in active memory.
@@ -59,7 +59,7 @@ This allows the system to maintain contextual awareness without storing full con
 
 -  User sends a message
 -  Backend receives request via FastAPI
--  Last 5 messages + stored summary are retrieved
+-  The sumary off last 5 conversation is retrived
 -  Context is sent to Ollama (qwen2.5-coder:3b)
 -  Model generates response
 -  Response is returned to frontend
@@ -82,23 +82,6 @@ Due to local model execution, response time may vary depending on system specifi
 -  Persistent memory system using summarization
 -  Clean separation of frontend and backend
 -  Optimized for real-world chatbot behavior
-
-*Chatbot Flow (Summary)
-User Input
-   ↓
-FastAPI Backend
-   ↓
-Fetch last 5 messages + conversation summary
-   ↓
-Send context → Ollama (qwen2.5-coder:3b)
-   ↓
-AI Response generated
-   ↓
-Store message in DB
-   ↓
-Update conversation summary
-   ↓
-Return response to frontend
 
 *Conclusion
 
