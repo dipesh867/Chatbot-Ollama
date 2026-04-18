@@ -1,5 +1,6 @@
 AI Chatbot using FastAPI + Ollama
-📌 Overview
+
+*Overview:
 
 This project is a full-stack AI chatbot system built with a modern architecture that combines a responsive frontend and a powerful backend powered by local LLMs via Ollama. The system is designed to support real-time conversations, persistent chat history, and contextual memory using conversation summarization.
 
